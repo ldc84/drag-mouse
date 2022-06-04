@@ -1,0 +1,36 @@
+// CSS Grid layout
+body {
+
+  background-color:#171717;
+
+  &.over-hidden {
+    overflow: hidden;
+  }
+}
+
+// wrap
+#wrap {
+
+}
+
+.dim {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.8);
+  z-index: 10;
+}
+
+// container
+.container {
+  max-width:1136px;
+  margin:0 auto;
+}
+
+// contents
+#contents {
+  min-width: 1575px;
+  padding:122px 0 50px 470px;
+}
