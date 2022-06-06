@@ -17,15 +17,21 @@
       display: flex;
       align-items: center;
       height: 28px;
+      padding: 0 0 0 10px;
       color: #777;
       font-size: rem(14);
       letter-spacing: -0.42px;
       border-radius: 5px;
       transition: all .2s ease-in-out;
       .ico {
+        display: flex;
+        align-items: center;
         width:14px;
         height: 14px;
         margin-right: 5px;
+        img {
+          width: 12px;
+        }
       }
       &:hover {
         color:#aaa;

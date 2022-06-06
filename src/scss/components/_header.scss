@@ -1,13 +1,13 @@
 // header
 #header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 345px;
   padding: 54px 43px 0 26px;
   background-color: #111;
-
+  z-index: 10;
   h1 {
     padding: 0 0 20px 23px;
     a {
@@ -95,7 +95,11 @@
         width:28px;
         height:28px;
         margin-right: 10px;
-        background-color:#b93e3e;
+        background-color:#3b1210;
+        img {
+          width:16px;
+          height:16px;
+        }
       }
       .leng {
         position: absolute;
@@ -113,11 +117,13 @@
 
     &.sub {
       > a {
-        background-image: url("./images/");
-        background-position:94% center;
+        background-image: url("../images/ico_arrow_donw01.svg");
+        background-position:92% center;
         background-repeat: no-repeat;
+        background-size:8px auto;
       }
       > ul {
+        display: none;
         padding:15px 0 15px 60px;
         li {
           padding: 10px 0;
@@ -126,6 +132,7 @@
             font-size:rem(14);
             line-height: 1.2;
             letter-spacing: -0.14px;
+            &:hover,
             &.active {
               color:#ccc;
             }

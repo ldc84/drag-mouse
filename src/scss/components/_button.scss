@@ -27,23 +27,13 @@
   transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
 }
 
-.m-btn-box-1 {
-  display:none;
-  // mobile
-  @include mediaQuery($deviceSmall){
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    height:48px;
-    padding:0 40px 0 40px;
-    border:1px solid #333;
-    background-color:#f4f4f4;
-
-    &.two {
-      > a {
-        width:45%;
-      }
-    }
+.btn-fix-1 {
+  position: absolute;
+  right: 52px;
+  bottom: 48px;
+  button + button,
+  .button + .button {
+    margin-left: 4px;
   }
 }
 
@@ -64,14 +54,16 @@ input[type='submit'] {
   box-sizing: border-box;
   text-align: center;
   font-family: inherit;
-  padding: 0 65px;
-  height: 48px;
-  line-height: 46px;
-  color: $color-text;
+  padding: 0 24px;
+  height: 45px;
+  line-height: 1.2;
+  color: #fff;
   font-size: rem(16);
+  letter-spacing: -0.48px;
   text-align: center;
   transition: all ease-in-out 300ms;
   outline: none;
+  border-radius: 6px;
 
 
   // size
@@ -79,75 +71,24 @@ input[type='submit'] {
     padding:0 36px;
   }
 
-  &.small-2 {
-    min-width:80px;
-    height:40px;
-    line-height:38px;
-    padding:0 10px;
-    font-size:rem(16);
-  }
-  &.small-3 {
-    min-width:80px;
-    height:32px;
-    line-height:30px;
-    padding:0 20px;
-    font-size:rem(16);
-  }
-  &.small-4 {
-    min-width:200px;
-    height:40px;
-    line-height:38px;
-    padding:0 20px;
-    font-size:rem(16);
-    font-weight:700;
-  }
-  &.small-5 {
-    min-width:160px;
-    height:40px;
-    line-height:38px;
-    padding:0 10px;
-    font-size:rem(18);
-    font-weight:500;
-  }
-
-  &.xsmall-1 {
-    min-width:80px;
-    height:24px;
-    line-height:22px;
-    padding:0 10px;
-    font-size:rem(13);
+  &.size-xs {
+    height: 25px;
+    padding: 0 7px;
+    font-size:rem(14);
+    border-radius: 5px;
   }
 
   // color
   &.color-1 {
-    color:#fff;
-    background-color:$color-point-1;
-    &:disabled {
-      background-color:#c4c4c7;
-      opacity: 0.5;
-    }
-  }
-
-
-  &.color-4 {
-    color:#fff;
-    background-color:$color-point-2;
-  }
-  &.color-5 {
-    color:#fff;
     background-color:$color-point-1;
   }
-  &.color-6 {
-    color:#333;
-    border:1px solid #333;
+  &.color-2 {
+    color:#999;
+    background-color:#2a2a2a;
   }
-  &.color-7 {
-    color:#333;
-    border:1px solid $color-point-2;
-  }
-  &.color-8 {
-    color:$color-point-2;
-    border:1px solid $color-point-2;
+  &.color-3 {
+    color:#666;
+    background-color:#292929;
   }
 
   // display
@@ -156,62 +97,52 @@ input[type='submit'] {
     width: 100%;
   }
 
-  // width
-  &.width-1 {
-    width:200px;
-  }
-
   // radius
   &.radius-1 {
     border-radius: 24px;
   }
-  &.radius-2 {
-    border-radius: 4px;
-  }
-  &.radius-3 {
-    border-radius: 16px;
-  }
-  &.radius-4 {
-    border-radius: 4px;
-  }
 
+}
 
-  // mobile
-  @include mediaQuery($deviceSmall){
-
-    // size
-    &.small-1 {
-      height:32px;
-      line-height:30px;
-      padding:0 20px;
-      font-size:rem(13);
-      font-weight:500;
+// count-btn-1
+.count-btn-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 87px;
+  height: 35px;
+  padding: 0 5px;
+  background-color: #292929;
+  border-radius: 5px;
+  > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #999;
+    font-size: rem(22);
+    font-weight: 500;
+    line-height: 1.2;
+    border-radius: 50%;
+    &:hover {
+      background-color: #393939;
     }
-
-    &.small-4 {
-      min-width:120px;
-      height:32px;
-      line-height:30px;
-      padding:0 10px;
-      font-size:rem(14);
-    }
-
-    // radius
-    &.radius-2 {
-      border-radius: 18px;
-    }
-    
-    // color
-    &.color-2 {
-      color:#333;
-      border:1px solid #707070;
-      background-color:#fff;
-    }
-    &.color-3 {
-      color:#333;
-      border:1px solid $color-point-2;
-      background-color:#fff;
+    &.plus {
+      > span {
+        display: block;
+        padding-top: 2px;
+      }
     }
   }
-
+  input {
+    width: 14px;
+    height: 16px;
+    line-height: 16px;
+    color:#ccc;
+    font-size:rem(20);
+    letter-spacing: -0.6px;
+    background-color:transparent;
+    border: none;
+  }
 }

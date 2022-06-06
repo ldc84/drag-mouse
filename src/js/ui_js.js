@@ -31,8 +31,20 @@
 
   // header
   $(function(){
-    var noti = $('#header .noti');
-    var notiCon = $('#header .notification-box');
+    var header = $('#header');
+    var gnbSub = header.find('.gnb-list .sub > a');
+    var noti = header.find('.noti');
+    var notiCon = header.find('.notification-box');
+
+    // gnb sub
+    gnbSub.on('click', function(){
+      var $this = $(this);
+      var sub = $this.next('ul');
+
+      $this.toggleClass('active');
+      sub.toggle();
+      return false;
+    });
 
     // 알림
     noti.on('click', function(){

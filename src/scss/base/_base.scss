@@ -80,11 +80,6 @@ li {
 
 pre {
   white-space: pre;
-  padding: 0.2em 0.4em;
-  margin: 1em 0 1.5em 3em;
-  background-color: $color-code;
-  border-radius: 0.2em;
-  overflow-x: auto;
 }
 
 code {
@@ -250,4 +245,15 @@ legend,
 .nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
   visibility : visible\9; /* Target only IE7 and IE8 with this hack */
   opacity    : 0.99;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }

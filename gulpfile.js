@@ -31,6 +31,12 @@
     sourcemaps    = devBuild ? require('gulp-sourcemaps') : null,
     browsersync   = devBuild ? require('browser-sync').create() : null;
 
+  const date = new Date();
+  const dateYear = date.getFullYear();
+  const dateMonth = date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1;
+  const dateDay = date.getDate() < 10 ? '0'+date.getDate() : date.getDate();
+  const getDate = `${dateYear}${dateMonth}${dateDay}`;
+
   console.log(process.env.NODE_ENV);
   console.log('Gulp', devBuild ? 'development' : 'production', 'build');
 
@@ -173,7 +179,7 @@
   /**************** zip task ****************/
   function buildZip() {
     return gulp.src('./build/**')
-      .pipe(zip('publish.zip'))
+      .pipe(zip('publish'+getDate+'.zip'))
       .pipe(gulp.dest('./'))
   }
 
