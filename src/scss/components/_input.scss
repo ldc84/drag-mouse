@@ -46,7 +46,8 @@
   position: relative;
   margin-top: 30px;
   padding: 22px 0 22px 0;
-  input[type="text"] {
+  input[type="text"],
+  select {
     position: relative;
     width: 100%;
     height: 40px;
@@ -61,6 +62,9 @@
     outline: none;
     z-index: 2;
     transition: all .2s ease-in-out;
+    option[disabled] {
+      display: none;
+    }
   }
   > span {
     position: absolute;
@@ -100,21 +104,25 @@
   }
 
   // focus
-  input[type="text"]:focus {
+  input[type="text"]:focus,
+  select:focus {
     border-color: $color-point-1;
   }
-  input[type="text"]:focus + .label {
+  input[type="text"]:focus + .label,
+  select:focus + .label {
     color: $color-point-1;
   }
 
   input[type="text"]:focus + .label,
-  input[type="text"]:valid + .label {
+  input[type="text"]:valid + .label,
+  select + .label {
     top: 0;
   }
 
   // error
   &.error {
-    input[type="text"] {
+    input[type="text"],
+    select {
       border-bottom-color: $color-point-2;
     }
     > span {
@@ -127,7 +135,8 @@
 
   // success
   &.success {
-    input[type="text"] {
+    input[type="text"],
+    select {
       border-bottom-color: $color-point-1;
     }
     > span {

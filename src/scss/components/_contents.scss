@@ -194,7 +194,7 @@
     height: 820px;
   }
   .menu-box {
-    width: 100px;
+    width: 120px;
     padding: 30px 0 0 20px;
     li {
       padding: 5px 0 5px;
@@ -220,6 +220,17 @@
     height: 100%;
     > div {
       width: 480px;
+    }
+    .column {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      > div {
+        height: 274px;
+        &:first-child {
+          height: 525px;
+        }
+      }
     }
   }
 
@@ -386,8 +397,8 @@
           border-radius: 10px;
           p {
             &:first-child {
-              width: 240px;
-              padding-right: 30px;
+              width: 230px;
+              padding-right: 26px;
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
@@ -466,6 +477,7 @@
     }
     
     .coment {
+      height: 36px;
       margin-top: 12px;
       color:#777;
       font-size:rem(14);
@@ -524,6 +536,45 @@
       }
     }
   
+  }
+
+  // product-choice-list
+  .product-choice-list {
+    display: flex;
+    justify-content: space-between;
+    .product-choice {
+      width: 605px;
+      padding: 27px 0;
+      &:before {
+        left:303px;
+      }
+      &:after {
+        display: none;
+      }
+      > div {
+        width: 302.5px;
+        padding:40px 50px 0 50px;
+      }
+    
+      .tit {
+        flex-flow: column;
+        align-items: flex-start;
+        .eng {
+          margin: 0 0 10px 0;
+        }
+      }
+      .cach-btn {
+        left: 50px;
+        right: 50px;
+      }
+    
+    }
+    .product-list {
+      width: 355px;
+      height: 460px;
+      padding: 18px;
+    }
+
   }
 
   // product-info
@@ -764,6 +815,52 @@
             &.val {
               color: #bbb;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+// cafe-list-1
+.cafe-list-1 {
+  .th-box {
+    display: flex;
+    p {
+      padding: 15px 14px 15px 14px;
+      color: #999;
+      font-size: rem(15);
+      letter-spacing: -0.45px;
+      &:first-child {
+        width: 240px;
+      }
+    }
+  }
+  .td-box {
+    height: 380px;
+    border-top: 1px solid #333;
+    .td-box-list {
+      padding: 10px 0;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 34px;
+        padding: 0 14px;
+        color: #777;
+        font-size: rem(15);
+        line-height: 1.2;
+        letter-spacing: -0.48px;
+        border-radius: 10px;
+        p {
+          text-align: right;
+          &:first-child {
+            width: 210px;
+            padding-right: 26px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
           }
         }
       }
