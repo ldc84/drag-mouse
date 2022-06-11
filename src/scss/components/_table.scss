@@ -20,7 +20,7 @@
     th,
     td {
       height: 59px;
-      padding:16px 5px 14px 12px;
+      padding:16px 10px 14px 12px;
       line-height:1.2;
       &.center {
         text-align: center;
@@ -72,6 +72,24 @@
           transform: rotate(90deg);
         }
       }
+      .link-2 {
+        display: block;
+        color: #aaa;
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right:4px;
+          top:7px;
+          width:10px;
+          height:5px;
+          background:url("../images/ico_arrow_donw01.svg") no-repeat center center;
+          background-size:10px auto;
+        }
+      }
+      .link-3 {
+        color: #aaa;
+      }
       .ranking {
         display: flex;
         > p {
@@ -116,6 +134,21 @@
           background-color: #292929;
         }
       }
+
+      .td-faq {
+        .question {
+          color: #aaa;
+        }
+        .answer {
+          display: none;
+          padding-top: 5px;
+          color: #999;
+          font-size: rem(14);
+          font-weight: 300;
+          letter-spacing: -0.42px;
+        }
+      }
+
     }
     tr {
       &:first-child {

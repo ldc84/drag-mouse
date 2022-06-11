@@ -61,6 +61,12 @@ body {
   word-break: keep-all;
 }
 
+input,
+select,
+textarea {
+  font-family: $font-main;
+}
+
 h1,
 h2,
 h3,

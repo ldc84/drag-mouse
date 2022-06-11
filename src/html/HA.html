@@ -1,4 +1,4 @@
-<!-- @@master = /template/master.html {"title":"전략형 블로그 체험단 | 캠페인 생성 | "} -->
+<!-- @@master = /template/master_contents.html {"title":"전략형 블로그 체험단 | 캠페인 생성 | "} -->
 
 <!-- @@block = contents -->
 <div id="contentsInner">
@@ -215,14 +215,95 @@
       <div class="dual-box">
         <div class="column">
           <div class="box-type-3 padding-type-1">
-
+            <div class="form-input-1 mt-0">
+              <select name="" id="" required>
+                <option disabled selected>선택</option>
+                <option value="">방식1</option>
+                <option value="">방식2</option>
+              </select>
+              <span class="label">발행 방식</span>
+              <span class="error-msg">발행 방식을 올바르게 선택해주세요.</span>
+            </div>
+            <div class="calendar-custom-1">
+              <p class="label">희망 발행일정</p>
+              <div class="calendar"></div>
+            </div>
           </div>
           <div class="box-type-3 padding-type-1">
-            
+            <div class="form-input-2 mt-0">
+              <span class="label">참고자료 첨부 (선택)</span>
+              <div class="file-box">
+                <input type="text" id="fileText">
+                <button type="button" class="button color-2">업로드</button>
+                <input type="file" onchange="document.getElementById('fileText').value = this.value">
+              </div>
+            </div>
+            <div class="form-input-2">
+              <span class="label">기타 희망사항 (선택)</span>
+              <input type="text" value="">
+            </div>
           </div>
         </div>
         <div class="box-type-3 padding-type-1">
-          1212
+          <!-- HB -->
+          <div>
+            <div class="form-input-2 mt-0">
+              <span class="label">제목 1</span>
+              <input type="text" value="">
+            </div>
+            <div class="form-input-2">
+              <span class="label">본문 1</span>
+              <textarea cols="30" rows="10" style="height: 270px;"></textarea>
+            </div>
+            <div class="btn-box-1">
+              <button type="button" class="button color-4 size-sm radius-1">삭제</button>
+              <button type="button" class="button color-2 size-sm radius-1">원고 추가</button>
+            </div>
+            <div class="number-list-1">
+              <p class="text-1">작성된 원고는 총 <strong>11건</strong>입니다</p>
+              <ul>
+                <li><a href="" class="active">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+                <li><a href="">9</a></li>
+                <li><a href="">10</a></li>
+                <li><a href="">11</a></li>
+                <li><a href="">12</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- //HB -->
+          <!-- HC -->
+          <div style="display:none;">
+            <div class="form-input-2 mt-0">
+              <span class="label">제목 가이드 2</span>
+              <textarea cols="30" rows="10" style="height: 120px;"></textarea>
+            </div>
+            <div class="form-input-2">
+              <span class="label">본문 가이드 2</span>
+              <textarea cols="30" rows="10" style="height: 260px;"></textarea>
+            </div>
+            <div class="btn-box-1">
+              <button type="button" class="button color-4 size-sm radius-1">삭제</button>
+              <button type="button" class="button color-2 size-sm radius-1">가이드 추가</button>
+            </div>
+            <div class="number-list-1">
+              <ul>
+                <li><a href="" class="active">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- //HC -->
         </div>
       </div>
 
@@ -446,8 +527,17 @@
 <!-- @@close -->
 
 <!-- @@block = script -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+<script type="text/javascript" src="./js/pignose.calendar.full.min.js"></script>
 <script>
   $(function(){
+
+    $('.calendar').pignoseCalendar({
+      theme: 'dark', // light, dark, blue
+      multiple: true,
+      lang: 'ko'
+    });
 
     // menu tab
     var menuBox = $('.menu-box');

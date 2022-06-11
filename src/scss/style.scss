@@ -11,6 +11,7 @@
 
 // plugin
 @import 'plugin/slick';
+@import 'plugin/pignose.calendar.min.css';
 
 // components
 @import 'components/_layout';
@@ -25,5 +26,6 @@
 @import 'components/_list';
 @import 'components/_tab';
 @import 'components/_text';
+@import 'components/_calendar';
 
 @import 'components/_contents';
