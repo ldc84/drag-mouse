@@ -35,7 +35,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
   
-  <link rel="stylesheet" href="./css/style.css?t=1654782200075">
+  <link rel="stylesheet" href="./css/style.css?t=1654958121038">
 
 </head>
 
@@ -279,13 +279,86 @@
               <span class="label">발행 방식</span>
               <span class="error-msg">발행 방식을 올바르게 선택해주세요.</span>
             </div>
+            <div class="calendar-custom-1">
+              <p class="label">희망 발행일정</p>
+              <div class="calendar"></div>
+            </div>
           </div>
           <div class="box-type-3 padding-type-1">
-            
+            <div class="form-input-2 mt-0">
+              <span class="label">참고자료 첨부 (선택)</span>
+              <div class="file-box">
+                <input type="text" id="fileText">
+                <button type="button" class="button color-2">업로드</button>
+                <input type="file" onchange="document.getElementById('fileText').value = this.value">
+              </div>
+            </div>
+            <div class="form-input-2">
+              <span class="label">기타 희망사항 (선택)</span>
+              <input type="text" value="">
+            </div>
           </div>
         </div>
         <div class="box-type-3 padding-type-1">
-          1212
+          <!-- HB -->
+          <div>
+            <div class="form-input-2 mt-0">
+              <span class="label">제목 1</span>
+              <input type="text" value="">
+            </div>
+            <div class="form-input-2">
+              <span class="label">본문 1</span>
+              <textarea cols="30" rows="10" style="height: 270px;"></textarea>
+            </div>
+            <div class="btn-box-1">
+              <button type="button" class="button color-4 size-sm radius-1">삭제</button>
+              <button type="button" class="button color-2 size-sm radius-1">원고 추가</button>
+            </div>
+            <div class="number-list-1">
+              <p class="text-1">작성된 원고는 총 <strong>11건</strong>입니다</p>
+              <ul>
+                <li><a href="" class="active">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+                <li><a href="">9</a></li>
+                <li><a href="">10</a></li>
+                <li><a href="">11</a></li>
+                <li><a href="">12</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- //HB -->
+          <!-- HC -->
+          <div style="display:none;">
+            <div class="form-input-2 mt-0">
+              <span class="label">제목 가이드 2</span>
+              <textarea cols="30" rows="10" style="height: 120px;"></textarea>
+            </div>
+            <div class="form-input-2">
+              <span class="label">본문 가이드 2</span>
+              <textarea cols="30" rows="10" style="height: 260px;"></textarea>
+            </div>
+            <div class="btn-box-1">
+              <button type="button" class="button color-4 size-sm radius-1">삭제</button>
+              <button type="button" class="button color-2 size-sm radius-1">가이드 추가</button>
+            </div>
+            <div class="number-list-1">
+              <ul>
+                <li><a href="" class="active">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- //HC -->
         </div>
       </div>
 
@@ -515,14 +588,23 @@
   <!-- //wrap -->
 
   <!-- jquery cdn -->
-  <script src="./js/jquery-1.12.4.js?t=1654782200075"></script>
-  <script src="./js/jquery.nanoscroller.min.js?t=1654782200075"></script>
-  <script src="./js/slick.min.js?t=1654782200075"></script>
-  <script src="./js/ui_js.js?t=1654782200075"></script>
+  <script src="./js/jquery-1.12.4.js?t=1654958121038"></script>
+  <script src="./js/jquery.nanoscroller.min.js?t=1654958121038"></script>
+  <script src="./js/slick.min.js?t=1654958121038"></script>
+  <script src="./js/ui_js.js?t=1654958121038"></script>
 
 <!-- start script -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+<script type="text/javascript" src="./js/pignose.calendar.full.min.js?t=1654958121038"></script>
 <script>
   $(function(){
+
+    $('.calendar').pignoseCalendar({
+      theme: 'dark', // light, dark, blue
+      multiple: true,
+      lang: 'ko'
+    });
 
     // menu tab
     var menuBox = $('.menu-box');
