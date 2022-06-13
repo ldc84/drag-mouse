@@ -147,6 +147,21 @@
     }
   }
 
+  // in-text
+  &.in-text {
+    display: flex;
+    align-items: center;
+    input[type="text"] {
+      width: 46px;
+    }
+    .text-1 {
+      color: #ccc;
+      font-size: rem(18);
+      line-height: 1.2;
+      letter-spacing: -0.54px;
+    }
+  }
+
   // no-msg
   &.no-msg {
     padding-bottom:12px;

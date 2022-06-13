@@ -34,6 +34,69 @@
   }
 }
 
+// list-type-2
+.list-type-2 {
+  .head {
+    display: flex;
+    border-bottom: 1px solid #333;
+    p {
+      padding:0 10px 13px 12px;
+      color: #777;
+      font-size: rem(15);
+      line-height: 1.2;
+      letter-spacing: -0.45px;
+
+      &.sel {
+        width: 46px;
+      }
+    }
+  }
+  .body {
+    height: 340px;
+    ul {
+      padding: 5px 0;
+      li {
+        padding: 7px 10px 5px 12px;
+        .list-two {
+          display: flex;
+          align-items: center;
+          .checkbox-1 {
+            width: 46px;
+            height: 16px;
+          }
+          .link-1 {
+            flex: 1;
+          }
+        }
+        .link-1 {
+          position: relative;
+          display: block;
+          color: #999;
+          font-size: rem(16);
+          line-height: 1.2;
+          letter-spacing: -0.48px;
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right:0;
+            top:7px;
+            width:12px;
+            height:6px;
+            background:url("../images/ico_arrow_up01.svg") no-repeat center center;
+            background-size:12px;
+            transform: rotate(90deg);
+          }
+          &:hover,
+          &.active {
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
 // number-list-1
 .number-list-1 {
   margin: 30px -20px 0 -20px;
@@ -73,6 +136,60 @@
           color: #ccc;
           background-color: #333;
         }
+      }
+    }
+  }
+}
+
+// price-list-1
+.price-list-1 {
+  color: #777;
+  line-height:1.2;
+  .tit {
+    padding: 12px 23px;
+    color: #aaa;
+    font-size: rem(18);
+    letter-spacing: -0.54px;
+  }
+  > ul {
+    padding: 5px 23px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      p {
+        font-size: rem(15);
+        &:nth-child(1) {
+          width: 50%;
+        }
+        &:nth-child(2) {
+          width: 18%;
+        }
+        &:nth-child(3) {
+          width: 16%;
+        }
+        &:nth-child(4) {
+          flex: 1;
+        }
+
+        &.center {
+          text-align: center;
+        }
+        &.right {
+          text-align: right;
+        }
+        
+        strong {
+          color: #ccc;
+          font-weight: 500;
+        }
+      }
+
+      &.subject {
+        color: #999;
       }
     }
   }

@@ -128,3 +128,133 @@
     }
   }
 }
+
+// popup type
+.pignose-calendar-wrapper {
+  .pignose-calendar-dark {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    padding: 40px 35px 35px 35px;
+    background-color: #1f1f1f;
+    border:none;
+    box-shadow: none;
+    border-radius: 15px;
+    .pignose-calendar-top {
+      height: 40px;
+      padding: 0;
+      background:none;
+      border-bottom: 2px solid #444;
+      box-shadow: none;
+      .pignose-calendar-top-date {
+        position: static;
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        .pignose-calendar-top-year {
+          color: #ccc;
+          font-size: rem(18);
+          font-weight: 500;
+          letter-spacing: -0.54px;
+          order: 0;
+          &:after {
+            content: '년';
+          }
+        }
+        .pignose-calendar-top-month {
+          padding-left: 4px;
+          color: #ccc;
+          font-size: rem(18);
+          font-weight: 500;
+          letter-spacing: -0.54px;
+          order: 1;
+        }
+      }
+
+      .pignose-calendar-top-prev {
+        position: absolute;
+        top:0;
+        right:32px;
+        width: 25px;
+        height: 25px;
+        float: none;
+        margin-left: 0;
+        border-radius: 50%;
+        .icon-arrow-left {
+          display: block;
+          width: 25px;
+          height: 25px;
+          background: url("../images/ico_arrow_donw01.svg") no-repeat center center;
+          background-size: 12px;
+          transform: rotate(90deg);
+          &:before {
+            display: none;
+          }
+        }
+        &:hover {
+          background-color: #2a2a2a;
+        }
+      }
+      .pignose-calendar-top-next {
+        position: absolute;
+        top:0;
+        right:0;
+        width: 25px;
+        height: 25px;
+        float: none;
+        margin-right: 0;
+        border-radius: 50%;
+        .icon-arrow-right {
+          display: block;
+          width: 25px;
+          height: 25px;
+          background: url("../images/ico_arrow_donw01.svg") no-repeat center center;
+          background-size: 12px;
+          transform: rotate(-90deg);
+          &:before {
+            display: none;
+          }
+        }
+        &:hover {
+          background-color: #2a2a2a;
+        }
+      }
+    }
+    .pignose-calendar-header {
+      margin-top: 0;
+      padding: 0;
+    }
+    .pignose-calendar-body {
+      padding: 0;
+      .pignose-calendar-unit {
+        height: 50px;
+      }
+      .pignose-calendar-row {
+        .pignose-calendar-unit {
+          a {
+            color: #ccc;
+            font-size: rem(15);
+            font-weight: 300;
+          }
+          &.pignose-calendar-unit-sat,
+          &.pignose-calendar-unit-sun {
+            a {
+              color: #ccc;
+            }
+          }
+          &.pignose-calendar-unit-active {
+            a {
+              color: #fff;
+              background-color: #2379d0;
+            }
+          }
+          &.pignose-calendar-unit-range {
+            a {
+              background-color: #2a2a2a
+            }
+          }
+        }
+      }
+    }
+  }
+}

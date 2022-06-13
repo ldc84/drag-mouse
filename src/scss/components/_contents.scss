@@ -32,6 +32,27 @@
   justify-content: space-between;
 }
 
+// write-num-btn-box
+.write-num-btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  .text-1 {
+    color: #aaa;
+    font-size:rem(17);
+    line-height:1.2;
+    letter-spacing: -0.51px;
+    strong {
+      color: #ccc;
+      font-weight: 500;
+    }
+  }
+  .btn-box-1 {
+    margin-top: 0;
+  }
+}
+
 // main
 #main {
   width:980px;
@@ -228,6 +249,29 @@
       width: 376px;
       &.box-1 {
         width: 427px;
+      }
+    }
+  }
+
+  .dual-box-3 {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    > div {
+      width: 605px;
+      &:first-child {
+        width: 355px;
+      }
+    }
+    .column {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      > div {
+        height: 457px;
+        &:first-child {
+          height: 343px;
+        }
       }
     }
   }
@@ -633,6 +677,24 @@
     }
   }
 
+  // product-price
+  .product-price {
+    height: 460px;
+    padding: 40px 33px;
+    .product-price {
+      padding: 50px 20px 0 0;
+      color: #777;
+      font-size: rem(20);
+      line-height: 1.2;
+      letter-spacing: -0.6px;
+      text-align: right;
+      strong {
+        color: #ccc;
+        font-weight: 500;
+      }
+    }
+  }
+
 }
 
 // campaign-card-1
@@ -803,6 +865,9 @@
             }
           }
         }
+      }
+      &.type-2 {
+        height: 418px;
       }
     }
   }
