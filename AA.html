@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>로그인 | DRAG-MOUSE</title>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <!-- <link rel="alternate" href="http://" hreflang="ko" /> -->
+
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+  
+  <link rel="stylesheet" href="./css/style.css?t=1655736173018">
+
+</head>
+
+<body>
+
+  <div id="loginWrap">
+<!-- start contents -->
+<div class="login-join login">
+  <div class="title-box">
+    <h1>로그인</h1>
+    <p class="coment">
+      회원이 아니신가요?
+      <a href="">회원가입</a>
+    </p>
+  </div>
+  <form action="">
+    <div class="login-box">
+      <div class="form-input-1">
+        <input type="text" required>
+        <span class="label">아이디</span>
+        <span class="error-msg">아이디를 입력해주세요.</span>
+      </div>
+      <div class="form-input-1 password error">
+        <input type="password" value="test1234" required>
+        <span class="label">비밀번호</span>
+        <a href="" class="btn-eye">
+          <span></span>
+        </a>
+        <span class="error-msg">비밀번호가 일치하지 않습니다</span>
+      </div>
+      <div class="check-2">
+        <div class="checkbox-1">
+          <input type="checkbox" id="check1">
+          <label for="check1">로그인 상태 유지</label>
+        </div>
+        <a href="" class="link-1">아이디/비밀번호 찾기</a>
+      </div>
+      <div class="login-btn-box-1">
+        <button type="button" effect="ripple" class="button size-lg-1 color-1 block">로그인</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- end contents -->
+  </div>
+
+  <!-- jquery cdn -->
+  <script src="./js/jquery-1.12.4.js?t=1655736173018"></script>
+  <script src="./js/jquery.nanoscroller.min.js?t=1655736173018"></script>
+  <script src="./js/slick.min.js?t=1655736173018"></script>
+  <script src="./js/ui_js.js?t=1655736173018"></script>
+
+<!-- start script -->
+<script>
+  $(function(){
+    
+    // password eye
+    var btnEye = $('.login .btn-eye');
+    var password = $('.form-input-1.password > input');
+    var state = true;
+
+    btnEye.on('click', function(){
+      var type = state ? 'text' : 'password';
+      
+      btnEye.toggleClass('active');
+      password.attr('type', type);
+      state = !state;
+
+      return false;
+    });
+  });
+</script>
+
+<!-- end script -->
+</body>
+
+</html>
