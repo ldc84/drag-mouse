@@ -1,0 +1,46 @@
+<!-- @@master = /template/master_login.html {"title":"회원가입 | "} -->
+
+<!-- @@block = contents -->
+<div class="login-join">
+  <div class="title-box">
+    <h1>회원가입</h1>
+    <div class="step-dot">
+      <p class="active"></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+  <form action="">
+    <div class="login-box">
+      <div class="form-input-1">
+        <input type="text" required>
+        <span class="label">아이디</span>
+        <span class="error-msg">아이디를 입력해주세요.</span>
+      </div>
+      <div class="form-input-1 success">
+        <input type="password" value="121212" required>
+        <span class="label">비밀번호</span>
+        <span class="txt-guide safety">안전 <img src="./images/ico_lock_blue.svg" alt=""></span>
+        <span class="error-msg">비밀번호를 입력해주세요.</span>
+      </div>
+      <div class="form-input-1 error">
+        <input type="password" value="12121212" required>
+        <span class="label">비밀번호 확인</span>
+        <span class="error-msg">비밀번호가 일치하지 않습니다.</span>
+      </div>
+      <div class="check-1">
+        <div class="checkbox-1">
+          <input type="checkbox" id="check1">
+          <label for="check1">서비스 이용약관 및 개인정보 수집 이용에 동의합니다.</label>
+        </div>
+        <button type="button" class="button size-xs color-7" onclick="window.open('https://spiny-feast-7a4.notion.site/639803b3e2a5409dabc1d5c4cf8bc8cd')">
+          약관 보기
+        </button>
+      </div>
+      <div class="login-btn-box-1">
+        <button type="button" effect="ripple" class="button size-lg-1 color-1 block">다음</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- @@close -->

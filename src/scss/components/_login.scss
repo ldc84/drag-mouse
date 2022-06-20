@@ -1,0 +1,261 @@
+// loginWrap
+#loginWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+}
+
+.login-join {
+  position: relative;
+  width: 606px;
+  height: 800px;
+  padding: 110px 104px 0 104px;
+  background-color: #fafafa;
+  border-radius: 20px;
+  .title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      color: #111;
+      font-size: rem(32);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.32px;
+    }
+    .step-dot {
+      display: flex;
+      > p {
+        width: 8px;
+        height: 8px;
+        background-color: #ccc;
+        border-radius: 50%;
+        & + p {
+          margin-left: 7px;
+        }
+        &.active {
+          background-color: $color-point-1;
+        }
+      }
+    }
+  }
+
+  // button
+  .login-btn-box-1 {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 120px;
+    left: 104px;
+    right: 104px;
+    > p {
+      width: 223px;
+      &:first-child {
+        width: 163px;
+      }
+    }
+  }
+
+  // login
+  &.login {
+    height: 712px;
+    padding-top: 144px;
+    .title-box {
+      flex-flow: column;
+      align-items: flex-start;
+      .coment {
+        margin-top: 20px;
+        color: #555;
+        font-size: rem(15);
+        a {
+          color: $color-point-1;
+        }
+      }
+    }
+    .login-box {
+      padding-top: 30px;
+    }
+  }
+
+}
+
+.login-box {
+  padding-top: 50px;
+  .form-input-1 {
+    margin-top: 12px;
+    input[type="text"],
+    input[type="password"],
+    select {
+      color: #333;
+      border-bottom-color: #ccc;
+    }
+    select {
+      color: #999;
+      font-weight: 400;
+    }
+    > span {
+      &.label {
+        color: #999;
+      }
+      &.safety {
+        display: flex;
+        align-items: center;
+        color: $color-point-1;
+        img {
+          width: 14px;
+          margin: 0 0 2px 8px;
+        }
+      }
+    }
+
+    // focus
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+      border-color: $color-point-1;
+    }
+
+    // error
+    &.error {
+      input[type="text"],
+      input[type="password"],
+      select {
+        border-bottom-color: $color-point-2;
+      }
+    }
+
+    // success
+    &.success {
+      input[type="text"],
+      input[type="password"],
+      select {
+        border-bottom-color: $color-point-1;
+      }
+    }
+
+    // password
+    &.password {
+      .btn-eye {
+        display: block;
+        position: absolute;
+        top:32px;
+        right:10px;
+        width: 18px;
+        height: 18px;
+        background: url("../images/ico_eye.svg") no-repeat center center;
+        background-size: 18px auto;
+        z-index: 2;
+        > span {
+          position: absolute;
+          top:0;
+          left:0;
+          width: 18px;
+          height: 18px;
+          background: url("../images/ico_eye_line.svg") no-repeat center center;
+          background-size: 18px auto;
+        }
+
+        &.active {
+          > span {
+            display: none;
+          }
+        }
+      }
+      .error-msg {
+        left: auto;
+        right: 36px;
+      }
+      &.error {
+        .error-msg {
+          bottom: 34px;
+        }
+      }
+    }
+  }
+
+  .check-1 {
+    margin-top: 60px;
+    .checkbox-1 {
+      margin-right: 4px;
+      label {
+        font-size: rem(14);
+      }
+    }
+  }
+  .check-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .checkbox-1 {
+      label {
+        font-size: rem(14);
+      }
+    }
+    .link-1 {
+      color: #777;
+      font-size: rem(14);
+      line-height: 1.2;
+      letter-spacing: -0.42px;
+    }
+  }
+
+  // row-form-phone
+  .row-form-phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .form-input-1 {
+      width: 275px;
+    }
+    .button {
+      width: 113px;
+      height: 40px;
+      margin-bottom: 22px;
+      padding: 0;
+      font-size: rem(16);
+    }
+  }
+
+  // row-form-email
+  .row-form-email {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    > div {
+      width: 191px;
+    }
+  }
+
+}
+
+// join-success
+.join-success {
+  padding-top: 336px;
+  text-align: center;
+  line-height: 1.2;
+  background: url("../images/join_img01.png") no-repeat center 0;
+  background-size: 80% auto;
+  .text-1 {
+    color: #111;
+    font-size: rem(32);
+    font-weight: 600;
+    letter-spacing: -0.32px;
+  }
+  .text-2 {
+    margin-top: 25px;
+    color: #777;
+    font-size: rem(18);
+    letter-spacing: -0.18px;
+    span {
+      color: #555;
+      font-weight: 500;
+    }
+    strong {
+      color: $color-point-1;
+      font-weight: 500;
+    }
+  }
+}

@@ -27,6 +27,14 @@
         padding-left:0;
         padding-right:0;
       }
+      &.right {
+        text-align: right;
+        padding-right: 16px;
+      }
+
+      .checkbox-1 {
+        margin-top: 5px;
+      }
     }
     th {
       color:#777;
@@ -157,5 +165,31 @@
         }
       }
     }
+  }
+}
+
+// tb-data-1
+.tb-data-1 {
+  width: 100%;
+  color: #999;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  text-align: left;
+  th {
+    padding: 15px 0 13px 0;
+    font-size: rem(14);
+    border-bottom: 1px solid #555;
+  }
+  td {
+    padding: 10px 0 7px 0;
+    font-size: rem(15);
+    a {
+      color: #999;
+    }
+  }
+  .checkbox-1.only {
+    padding-top: 2px;
+    @include fontNone;
   }
 }

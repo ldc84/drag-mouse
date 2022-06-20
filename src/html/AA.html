@@ -1,0 +1,62 @@
+<!-- @@master = /template/master_login.html {"title":"로그인 | "} -->
+
+<!-- @@block = contents -->
+<div class="login-join login">
+  <div class="title-box">
+    <h1>로그인</h1>
+    <p class="coment">
+      회원이 아니신가요?
+      <a href="">회원가입</a>
+    </p>
+  </div>
+  <form action="">
+    <div class="login-box">
+      <div class="form-input-1">
+        <input type="text" required>
+        <span class="label">아이디</span>
+        <span class="error-msg">아이디를 입력해주세요.</span>
+      </div>
+      <div class="form-input-1 password error">
+        <input type="password" value="test1234" required>
+        <span class="label">비밀번호</span>
+        <a href="" class="btn-eye">
+          <span></span>
+        </a>
+        <span class="error-msg">비밀번호가 일치하지 않습니다</span>
+      </div>
+      <div class="check-2">
+        <div class="checkbox-1">
+          <input type="checkbox" id="check1">
+          <label for="check1">로그인 상태 유지</label>
+        </div>
+        <a href="" class="link-1">아이디/비밀번호 찾기</a>
+      </div>
+      <div class="login-btn-box-1">
+        <button type="button" effect="ripple" class="button size-lg-1 color-1 block">로그인</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- @@close -->
+
+<!-- @@block = script -->
+<script>
+  $(function(){
+    
+    // password eye
+    var btnEye = $('.login .btn-eye');
+    var password = $('.form-input-1.password > input');
+    var state = true;
+
+    btnEye.on('click', function(){
+      var type = state ? 'text' : 'password';
+      
+      btnEye.toggleClass('active');
+      password.attr('type', type);
+      state = !state;
+
+      return false;
+    });
+  });
+</script>
+<!-- @@close -->
