@@ -35,7 +35,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
   
-  <link rel="stylesheet" href="./css/style.css?t=1655736173028">
+  <link rel="stylesheet" href="./css/style.css?t=1655816427457">
 
 </head>
 
@@ -43,7 +43,8 @@
 
   <div id="loginWrap">
 <!-- start contents -->
-<div class="login-join">
+<!-- step1 -->
+<div class="login-join" id="step1">
   <div class="title-box">
     <h1>회원가입</h1>
     <div class="step-dot">
@@ -80,23 +81,137 @@
         </button>
       </div>
       <div class="login-btn-box-1">
-        <button type="button" effect="ripple" class="button size-lg-1 color-1 block">다음</button>
+        <button type="button" effect="ripple" class="button size-lg-1 color-1 block" onclick="move('#step2')">다음</button>
       </div>
     </div>
   </form>
 </div>
+<!-- //step1 -->
+
+<!-- step2 -->
+<div class="login-join" id="step2" style="display: none;">
+  <div class="title-box">
+    <h1>회원가입</h1>
+    <div class="step-dot">
+      <p></p>
+      <p class="active"></p>
+      <p></p>
+    </div>
+  </div>
+  <form action="">
+    <div class="login-box">
+      <div class="form-input-1">
+        <input type="text" required>
+        <span class="label">기업명(상호명)</span>
+        <span class="error-msg">기업명을 입력해주세요.</span>
+      </div>
+      <div class="form-input-1">
+        <input type="text" required>
+        <span class="label">담당자명</span>
+        <span class="error-msg">담당자명을 입력해주세요.</span>
+      </div>
+      <div class="row-form-phone">
+        <div class="form-input-1 success">
+          <input type="text" value="010-1234-1212" required>
+          <span class="label">담당자 연락처</span>
+          <span class="error-msg">담당자 연락처를 입력해주세요.</span>
+        </div>
+        <button type="button" effect="ripple" class="button color-1">인증번호 받기</button>
+      </div>
+      <div class="form-input-1 error">
+        <input type="text" value="121212" required>
+        <span class="label">인증번호</span>
+        <span class="error-msg">인증번호를 다시 확인해주세요.</span>
+      </div>
+      <div class="login-btn-box-1">
+        <p>
+          <button type="button" effect="ripple" class="button size-lg-1 color-7 block" onclick="move('#step1')">이전</button>
+        </p>
+        <p>
+          <button type="button" effect="ripple" class="button size-lg-1 color-1 block" onclick="move('#step3')">다음</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- //step2 -->
+
+<!-- step3 -->
+<div class="login-join" id="step3" style="display: none;">
+  <div class="title-box">
+    <h1>회원가입</h1>
+    <div class="step-dot">
+      <p></p>
+      <p></p>
+      <p class="active"></p>
+    </div>
+  </div>
+  <form action="">
+    <div class="login-box">
+      <div class="row-form-email">
+        <div class="form-input-1">
+          <input type="text" required>
+          <span class="label">이메일</span>
+          <span class="error-msg">이메일을 입력해주세요.</span>
+        </div>
+        <div class="form-input-1">
+          <select name="" id="" required>
+            <option selected>naver.com</option>
+            <option value="">daum.net</option>
+            <option value="">gmail.com</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-input-1">
+        <select name="" id="" required>
+          <option selected>Drag-Mouse를 알게된 경로</option>
+          <option value="">1</option>
+          <option value="">2</option>
+        </select>
+      </div>
+      <div class="login-btn-box-1">
+        <button type="button" effect="ripple" class="button size-lg-1 color-1 block" onclick="move('#step4')">가입하기</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- //step3 -->
+
+<!-- step4 -->
+<div class="login-join" id="step4" style="display: none;">  
+  <div class="join-success">
+    <div>
+      <p class="text-1">환영합니다!</p>
+      <p class="text-2">
+        <span>디어커스</span>님의 회원가입을 축하합니다.<br>
+        <span>디어커스</span>님의 드래그마우스 아이디는 <strong>abc123</strong>입니다.
+      </p>
+    </div>
+    <div class="login-btn-box-1">
+      <button type="button" effect="ripple" class="button size-lg-1 color-1 block">시작하기</button>
+    </div>
+  </div>
+</div>
+<!-- //step4 -->
+
 
 <!-- end contents -->
   </div>
 
   <!-- jquery cdn -->
-  <script src="./js/jquery-1.12.4.js?t=1655736173028"></script>
-  <script src="./js/jquery.nanoscroller.min.js?t=1655736173028"></script>
-  <script src="./js/slick.min.js?t=1655736173028"></script>
-  <script src="./js/ui_js.js?t=1655736173028"></script>
+  <script src="./js/jquery-1.12.4.js?t=1655816427457"></script>
+  <script src="./js/jquery.nanoscroller.min.js?t=1655816427457"></script>
+  <script src="./js/slick.min.js?t=1655816427457"></script>
+  <script src="./js/ui_js.js?t=1655816427457"></script>
 
 <!-- start script -->
-
+<script>
+  // next prev button click
+  function move(id){
+    $(id).show();
+    $(id).siblings('.login-join').hide();
+  }
+</script>
 
 <!-- end script -->
 </body>
