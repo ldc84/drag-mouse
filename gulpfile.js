@@ -147,6 +147,68 @@
       .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
   }
 
+
+  /**************** LANDING task ****************/
+  const landingCssConfig = {
+    src         : dir.src + 'landing/scss/landing.scss',
+    watch       : dir.src + 'landing/scss/**/*',
+    build       : dir.build + 'landing/css/',
+    sassOpts: {
+      sourceMap       : devBuild,
+      outputStyle     : 'nested',
+      imagePath       : '/landing/images/',
+      precision       : 3,
+      errLogToConsole : true
+    },
+    postCSS: [
+      require('postcss-assets')({
+        loadPaths: ['landing/images/'],
+        basePath: dir.build + 'landing/'
+      }),
+      require('autoprefixer')({
+        browsers: ['> 2%']
+      })
+    ]
+  };
+
+  function landingImages() {
+    return gulp.src(dir.src + 'landing/images/**')
+      .pipe(newer(dir.build + '/landing/images'))
+      .pipe(imagemin(imgConfig.minOpts))
+      .pipe(size({ showFiles:true }))
+      .pipe(gulp.dest(dir.build + '/landing/images'));
+  }
+
+  function landingCss() {
+    return gulp.src(landingCssConfig.src)
+      .pipe(sourcemaps ? sourcemaps.init() : noop())
+      .pipe(sass(landingCssConfig.sassOptsLanding).on('error', sass.logError))
+      .pipe(postcss(landingCssConfig.postCSS))
+      .pipe(base64({
+        maxImageSize: 120 * 1024 // bytes,
+      }))
+      .pipe(sourcemaps ? sourcemaps.write('./') : noop())
+      .pipe(size({ showFiles:true }))
+      .pipe(gulp.dest(dir.build + '/landing/css'))
+      .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
+  }
+
+  function landingJs() {
+    return gulp.src(dir.src + 'landing/js/*')
+      .pipe(babel())
+      .pipe(uglify())
+      .pipe(gulp.dest(dir.build + '/landing/js'))
+      .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
+  }
+
+  function landingHtml() {
+    return gulp.src(dir.src + 'landing/*.html')
+      .pipe(gulp.dest(dir.build + '/landing/'))
+      .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
+  }
+
+  exports.landing = gulp.series(landingImages, landingCss, landingJs, landingHtml);
+
   /**************** server task (now private) ****************/
   const syncConfig = {
     server: {
@@ -173,6 +235,11 @@
     gulp.watch([htmlConfig.template, htmlConfig.html], html);
     // JS changes
     gulp.watch(dir.src + 'js/*', js);
+    // Landing image
+    gulp.watch(dir.src + 'landing/images/**', landingImages);
+    gulp.watch(dir.src + 'landing/scss/**', landingCss);
+    gulp.watch(dir.src + 'landing/*.html', landingHtml);
+    gulp.watch(dir.src + 'landing/js/**', landingJs);
     done();
   }
 
@@ -192,7 +259,7 @@
   }
 
   /**************** exports task ****************/
-  exports.default = gulp.series(clean, conf, exports.css, html, js, watch, server);
-  exports.zip = gulp.series(clean, conf, exports.css, html, js, buildZip);
-  exports.deploy = gulp.series(clean, conf, exports.css, html, js, deploy);
+  exports.default = gulp.series(clean, conf, exports.css, exports.landing, html, js, watch, server);
+  exports.zip = gulp.series(clean, conf, exports.css, exports.landing, html, js, buildZip);
+  exports.deploy = gulp.series(clean, conf, exports.css, exports.landing, html, js, deploy);
 })();

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+// import all styles
+
+// helpers
+@import '../../scss/helpers/_variables';
+@import '../../scss/helpers/_mixins';
+
+// base
+@import '../../scss/base/_normalize';
+@import '../../scss/base/_base';
+
+// plugin
+@import '../../scss/plugin/slick';
+@import 'aos';
+
+@import 'landing_contents';
