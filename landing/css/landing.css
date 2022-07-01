@@ -1040,23 +1040,20 @@ legend,
 
 .landing-title-1 {
   color: #191f28;
-  font-size: 3.25rem;
+  font-size: 2.625rem;
   font-weight: 700;
   line-height: 1.15; }
   .landing-title-1 > span {
     font-weight: 700; }
   .landing-title-1.white {
     color: #fff; }
-  @media only screen and (min-width: 768px) and (max-width: 1280px) {
-    .landing-title-1 {
-      font-size: 2.71875rem; } }
   @media only screen and (max-width: 767px) {
     .landing-title-1 {
       font-size: 2rem; } }
 
 .landing-title-2 {
   color: #222;
-  font-size: 2.125rem;
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.34px; }
@@ -1166,8 +1163,6 @@ legend,
       width: 189px;
       margin-left: -510px; }
   @media only screen and (min-width: 768px) and (max-width: 1280px) {
-    .landing-top .landing-title-1 {
-      font-size: 3.28125rem; }
     .landing-top .object.a01 {
       top: 1350px;
       margin-left: -600px; }
@@ -1509,7 +1504,7 @@ legend,
       .landing-targeting .video {
         position: static;
         margin-top: 38px;
-        border-radius: 30px; }
+        border-radius: 15px; }
         .landing-targeting .video video {
           width: 100%;
           height: auto; } }
@@ -1765,8 +1760,8 @@ legend,
     .landing-benefit .btn-box > .button {
       height: 66px;
       padding: 0 24px 0 24px;
-      font-size: 1.25rem;
-      font-weight: 500;
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-size: 1.125rem;
       line-height: 1.2;
       letter-spacing: -0.2px;
       border-radius: 10px;
