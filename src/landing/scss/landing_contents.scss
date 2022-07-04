@@ -23,7 +23,7 @@
 
 .landing-title-1 {
   color: #191f28;
-  font-size: rem(52);
+  font-size: rem(42);
   font-weight: 700;
   line-height: 1.15;
   > span {
@@ -31,11 +31,6 @@
   }
   &.white {
     color: #fff;
-  }
-
-  // tablet
-  @include mediaQuery($deviceMiddle){
-    font-size: rem(43.5);
   }
 
   // mobile
@@ -46,7 +41,7 @@
 
 .landing-title-2 {
   color: #222;
-  font-size: rem(34);
+  font-size: rem(28);
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.34px;
@@ -197,10 +192,6 @@
 
   // tablet
   @include mediaQuery($deviceMiddle){
-
-    .landing-title-1 {
-      font-size: rem(52.5);
-    }
 
     .object {
       &.a01 {
@@ -678,7 +669,7 @@
     .video {
       position: static;
       margin-top: 38px;
-      border-radius: 30px;
+      border-radius: 15px;
       video {
         width: 100%;
         height: auto;
@@ -736,6 +727,15 @@
     padding: 55px 0 55px 0;
     .landing-title-1 {
       padding: 0 30px;
+    }
+    .client {
+      &:before,
+      &:after {
+        width: 100px;
+      }
+      > div {
+        margin-top: -8px;
+      }
     }
   }
 }
@@ -844,13 +844,14 @@
     padding: 80px 0 68px 0;
     .people-box {
       padding: 40px 0 0 0;
+      margin: 0 -16px;
       > div {
         width: 100%;
         height: 312px;
         margin-top: 0;
         border-radius: 0;
         .text-con {
-          left: 20px;
+          left: 36px;
           bottom: 32px;
           z-index: 2;
           .name {
@@ -865,11 +866,12 @@
           width: 100%;
           height: 312px;
           object-fit: cover;
+          border-radius: 15px;
         }
         .slick-slide {
           position: relative;
           height: 312px;
-          border-radius: 15px;
+          padding: 0 16px;
           overflow: hidden;
           &:nth-child(n+3) {
             .text-con {
@@ -1055,8 +1057,8 @@
     > .button {
       height: 66px;
       padding: 0 24px 0 24px;
-      font-size: rem(20);
-      font-weight: 500;
+      font-family: $font-main;
+      font-size: rem(18);
       line-height: 1.2;
       letter-spacing: -0.2px;
       border-radius: 10px;
